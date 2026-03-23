@@ -1,6 +1,6 @@
 def main():
 
-	menu = ['arroz', 'tutu', 'carne', 'batata frita', 'salada,', 'farofa']
+	menu = ['arroz', 'tutu', 'carne', 'batata frita', 'salada', 'farofa']
 
 	print(menu)
 
