@@ -7,6 +7,11 @@ authors = ["pali <prclash13@protonmail.com>"]
 readme = "README.md"
 packages = [{include = "self_service_game", from = "src"}]
 
+[tool.poetry.urls]
+"Homepage" = "https://github.com/sudo-pali/self_service_game"
+"Repository" = "https://github.com/sudo-pali/self_service_game"
+"Bug Tracker" = "https://github.com/sudo-pali/self_service_game/issues"
+
 [tool.poetry.dependencies]
 python = ">=3.12,<4.0"
 
