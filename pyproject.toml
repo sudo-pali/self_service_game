@@ -2,6 +2,7 @@
 name = "self_service_game"
 version = "0.1.0"
 description = ""
+license = "MIT"
 authors = ["pali <prclash13@protonmail.com>"]
 readme = "README.md"
 packages = [{include = "self_service_game", from = "src"}]
