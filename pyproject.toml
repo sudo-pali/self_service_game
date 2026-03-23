@@ -1,18 +1,26 @@
-[project]
-name = "self-service-game"
+[tool.poetry]
+name = "self_service_game"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "pali",email = "prclash13@protonmail.com"}
-]
+authors = ["pali <prclash13@protonmail.com>"]
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-]
-
-[tool.poetry]
 packages = [{include = "self_service_game", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.12,<4.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^9.0.2"
+pytest-cov = "^6.0.0"
+blue = "^0.9.1"
+taskipy = "^1.14.1"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+
+[tool.poetry.scripts]
+self-service  = "self_service.main:main"
