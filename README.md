@@ -16,7 +16,7 @@ Sirva-se com as comidas disponíveis:
 
 - farofa
 
-# Sem oção de repetição de alimento
+# Sem opção de repetição de alimento
 
 ### Como instalar e usar:
 
