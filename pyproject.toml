@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "self_service_game"
-version = "0.1.5"
+version = "0.1.6"
 description = ""
 license = "MIT"
 authors = ["pali <prclash13@protonmail.com>"]

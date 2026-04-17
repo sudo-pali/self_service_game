@@ -16,7 +16,21 @@ Sirva-se com as comidas disponíveis:
 
 - farofa
 
-# Sem opção de repetição de alimento
+Logo após sirva-se com as sobremesas:
+
+*sendo elas:*
+
+- quindim
+
+- bolo
+
+- torta
+
+- pudim
+
+- cupcake
+
+# Sem opção de repetição
 
 ### Como instalar e usar:
 
