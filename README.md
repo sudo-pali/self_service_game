@@ -1,4 +1,7 @@
 # Self Service
+(v 0.1.7)
+
+`Nota: bebidas adicionadas`
 
 Sirva-se com as comidas disponíveis:
 
@@ -16,7 +19,22 @@ Sirva-se com as comidas disponíveis:
 
 - farofa
 
-Logo após sirva-se com as sobremesas:
+Logo após sirva-se com as bebidas:
+- para sair do menu de alimentos pressione "s" caso contrário pressione "n".
+
+*sendo elas:*
+
+- coca cola
+
+- suco
+
+- água
+
+- água c/ gás
+
+- pepsi
+
+E, por fim sirva-se com as sobremesas:
 
 *sendo elas:*
 
@@ -43,4 +61,3 @@ pip install self-service-game
 # Uso
 self-service
 ```
-
