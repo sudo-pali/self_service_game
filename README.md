@@ -1,11 +1,11 @@
 # Self Service
-(v 0.1.7)
+(v 0.1.8)
 
 `Nota: bebidas adicionadas`
 
 Sirva-se com as comidas disponíveis:
 
-*que são elas:*
+*sendo elas:*
 
 - arroz
 
@@ -20,7 +20,6 @@ Sirva-se com as comidas disponíveis:
 - farofa
 
 Logo após sirva-se com as bebidas:
-- para sair do menu de alimentos pressione "s" caso contrário pressione "n".
 
 *sendo elas:*
 

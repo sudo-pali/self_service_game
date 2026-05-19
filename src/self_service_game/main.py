@@ -1,4 +1,4 @@
-# Função principal
+k# Função principal
 def main():
 
 
@@ -45,66 +45,46 @@ def main():
 	while True:
 
 
-		# Print de comidas e bebidas disponíveis
+		# Print de comidas disponíveis
 		print(f"""\n\n       
 					Comidas dispoíveis: 
 		
 			{menu}
-
-    					e bebidas: 
-
-			{bebidas}
 					\n\n""")
 
 
 		# Escolha do jogador (prato feito)
-		escolha = input('''\nEscolha um alimento e uma bebida sem repetições:
-				  
-  - Escolha um alimento ou pressione "Enter" para sair: 
+		escolha = input('''\n  - Escolha um alimento sem repetições ou pressione "Enter" para sair: 
 				  
 > ''').strip().lower()
 
 
 		# If's e else's (prato feito)
 		if escolha == "":
-			pass
+			break
 
 
 		if escolha in menu:
 
 			if escolha in prato_feito:	
-				print('''\n\n\n					Alimento já selecionado\n\n\n''')
+				print('''\n\n\n 
+		  			=======================
+		  			Alimento já selecionado
+		  			=======================\n\n\n''')
 		
 
 			else:
 				prato_feito.append(escolha)
-				print('''\n\n\n					Alimento adicionado com sucesso\n\n\n''')
+				print('''\n\n\n 
+		  			===============================
+		  			Alimento adicionado com sucesso
+		  			===============================\n\n\n''')
 
 		else:
-			print('''\n\n\n				  	Alimento não disponível\n\n\n''')
-
-
-		# Escolher bebida? s/n
-		escolher_bebida = input('''\nDeseja sair da seleção de alimentos,
-e escolher bebida? (s/n)''')
-
-
-		# If e elif's escolha bebida
-		if escolher_bebida == "s":
-			break
-
-
-		elif escolher_bebida == "n":
-			pass
-
-
-		elif escolher_bebida != "s" and escolher_bebida != "n":
-
-			print('''\n\n\n\n					OPÇÃO INVÁLIDA!!
-		 
-		 			digite apenas "s" ou "n". \n\n''')
-			
-			pass
+			print('''\n\n\n	
+		 			=======================		
+		 			Alimento não disponível
+		 			=======================\n\n\n''')
 
 
 	# Prato feito
@@ -117,22 +97,16 @@ e escolher bebida? (s/n)''')
 	while True:
 
 
-		# Print de comidas e bebidas disponíveis 2
+		# Print de bebidas disponíveis
 		print(f"""\n\n       
-					Comidas dispoíveis:
+					Bebidas dispoíveis:
 		 
-			{menu}
-		
-    					e bebidas:
-					 
 			{bebidas}
 					\n\n""")
 
 
 		# Escolha do jogador 2 (drink pronto)
-		escolha2 = input('''\nEscolha um alimento e uma bebida sem repetições:
-				   
-  - Escolha uma bebida ou pressione "Enter" para sair:
+		escolha2 = input('''\n  - Escolha uma bebida sem repetições ou pressione "Enter" para sair:
 				   
 > ''').strip().lower()
 
@@ -145,30 +119,30 @@ e escolher bebida? (s/n)''')
 		if escolha2 in bebidas:
 
 			if escolha2 in drink_pronto:
-				print('''\n\n\n				  	Bebida já selecionada\n\n\n''')
+				print('''\n\n\n				  	
+		  			=====================	
+		  			Bebida já selecionada
+		  			=====================\n\n\n''')
 
 
 			else:
 				drink_pronto.append(escolha2)
-				print('''\n\n\n					Bebida adicionada com sucesso\n\n\n''')
+				print('''\n\n\n					
+		  			=============================
+		  			Bebida adicionada com sucesso
+		  			=============================\n\n\n''')
 
 		else:
-			print('''\n\n\n				 	Bebida não disponível\n\n\n''')
+			print('''\n\n\n				 	
+		 			=====================
+		 			Bebida não disponível
+		 			=====================\n\n\n''')
 
 
 	# Drink pronto
 	print(f"""\n\n\n				    	Bebida selecionada: 
 	   
 	   			{drink_pronto}\n""")
-
-	# Prato feito + drink pronto
-	print(f'''\n\n\n				    	Seu prato feito:
-	    
-	   			{prato_feito}
-											 
-					       com 
-											   
-				{drink_pronto}\n\n\n''')
 
 
 	# Loop da sobremesa pronta
@@ -195,15 +169,24 @@ e escolher bebida? (s/n)''')
 		if escolha3 in sobremesas:
 
 			if escolha3 in sobremesa_pronta:
-				print('''\n\n\n					Sobremesa já selecionada\n\n\n''')
+				print('''\n\n\n					
+		  			========================
+		  			Sobremesa já selecionada
+		  			========================\n\n\n''')
 
 
 			else:
 				sobremesa_pronta.append(escolha3)
-				print('''\n\n\n					Adicionado com sucesso\n\n\n''')
+				print('''\n\n\n					
+		  			======================
+		  			Adicionado com sucesso
+		  			======================\n\n\n''')
 
 		else:
-			print('''\n\n\n					Sobremesa não disponível\n\n\n''')
+			print('''\n\n\n					
+		 			========================
+		 			Sobremesa não disponível
+		 			========================\n\n\n''')
 
 
 	# Sobremesa pronta
@@ -213,22 +196,27 @@ e escolher bebida? (s/n)''')
 
 
 	# Total de refeições
-	print(f"""\n\n					No total você comeu
-	    
-	   				{prato_feito}
+	print(f"""\n\n					
+                                        ===================
+                                        No total você comeu
+                                        ===================
+	   
+
+	   
+                                        {prato_feito}
 					   
-					de refeição
+                                        de refeição
 
-					acompanhado de 
+                                        acompanhado de 
 
-					{drink_pronto}
+                                        {drink_pronto}
 
 						
-			                 e 
+                                        	e 
 			
-			        	{sobremesa_pronta}
+                                        {sobremesa_pronta}
 
-					de sobremesa.""")
+                                        de sobremesa.""")
 
 
 # Chamando a função
