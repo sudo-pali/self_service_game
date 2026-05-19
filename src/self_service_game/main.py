@@ -1,4 +1,4 @@
-k# Função principal
+# Função principal
 def main():
 
 

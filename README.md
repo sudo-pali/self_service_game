@@ -1,7 +1,11 @@
 # Self Service
-(v 0.1.8)
+(v 0.1.9)
 
-`Nota: bebidas adicionadas`
+### Notas:
+
+> * **Bebidas adicionadas: o jogo agora contém um menu dedicado para drinks como suco e refris para acompanhar o prato principal.**
+
+> * **Correção de um "bug": uma letra "k" passou despercebida antes de um comentário no código fonte.**
 
 Sirva-se com as comidas disponíveis:
 
