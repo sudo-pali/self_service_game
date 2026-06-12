@@ -3,6 +3,7 @@ import os
 from time import sleep
 from InquirerPy import inquirer
 
+
 # Função principal
 def main():
 
