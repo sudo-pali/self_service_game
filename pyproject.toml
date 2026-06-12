@@ -14,6 +14,7 @@ packages = [{include = "self_service_game", from = "src"}]
 
 [tool.poetry.dependencies]
 python = ">=3.12,<4.0"
+inquirerpy = "^0.3.4"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
