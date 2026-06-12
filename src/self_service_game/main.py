@@ -1,17 +1,28 @@
+# Importando a biblioteca
+from InquirerPy import inquirer
+
+
 # Função principal
 def main():
 
 
 	# Menu de comidas
 	menu = ['arroz', 'tutu', 'carne', 'batata frita', 'salada', 'farofa', 'salpicão', 'maionese']
+	menu_escolhas = ['arroz', 'tutu', 'carne', 'batata frita', 'salada', 'farofa', 'salpicão', 'maionese', 'sair']
 
 
 	# Menu de bebidas
 	bebidas = ['coca cola', 'suco', 'água', 'água c/ gás', 'pepsi', 'vinho', 'caipirinha']
+	bebidas_escolha = ['coca cola', 'suco', 'água', 'água c/ gás', 'pepsi', 'vinho', 'caipirinha', 'sair']
 
 
 	# Menu de sobremesas
 	sobremesas = ['quindim', 'bolo', 'torta', 'pudim', 'cupcake', 'pavê', 'gelatina']
+	sobremesas_escolha = ['quindim', 'bolo', 'torta', 'pudim', 'cupcake', 'pavê', 'gelatina', 'sair']
+
+
+	# Escolhas
+	escolhas = ['S', 'N']
 
 
 	# Apresentação do game
@@ -54,37 +65,48 @@ def main():
 
 
 		# Escolha do jogador (prato feito)
-		escolha = input('''\n  - Escolha um alimento sem repetições ou pressione "Enter" para sair: 
-				  
-> ''').strip().lower()
+		escolha = inquirer.select(
+			qmark='',
+			amark='',
+			message='- Deseja escolher alimento? Pressione "N" para escolher bebida',
+			choices=escolhas,
+			show_cursor=False
+		).execute()
 
 
-		# If's e else's (prato feito)
-		if escolha == "":
+		# If's e else (prato feito)
+		if escolha == 'N':
 			break
 
 
-		if escolha in menu:
+		if escolha == 'S':
+			escolha_alimento = inquirer.select(
+				qmark='',
+				amark='',
+				message='Escolha um alimento ou pressione "sair" para avançar',
+				choices=menu_escolhas,
+				show_cursor=False
+			).execute()
+	
 
-			if escolha in prato_feito:	
-				print('''\n\n\n 
-		  			=======================
-		  			Alimento já selecionado
-		  			=======================\n\n\n''')
-		
+		if escolha_alimento == 'sair':
+			break
 
-			else:
-				prato_feito.append(escolha)
-				print('''\n\n\n 
+
+		if escolha_alimento not in prato_feito:
+				
+			prato_feito.append(escolha_alimento)
+			print('''\n\n\n 
 		  			===============================
 		  			Alimento adicionado com sucesso
 		  			===============================\n\n\n''')
+			
 
 		else:
-			print('''\n\n\n	
-		 			=======================		
-		 			Alimento não disponível
-		 			=======================\n\n\n''')
+			print('''\n\n\n 
+		  			=======================
+		  			Alimento já selecionado
+		  			=======================\n\n\n''')
 
 
 	# Prato feito
@@ -106,37 +128,49 @@ def main():
 
 
 		# Escolha do jogador 2 (drink pronto)
-		escolha2 = input('''\n  - Escolha uma bebida sem repetições ou pressione "Enter" para sair:
-				   
-> ''').strip().lower()
+		escolha2 = inquirer.select(
+			qmark='',
+			amark='',
+			message='- Deseja escolher bebida? Pressione "N" para escolher sobremesa',
+			choices=escolhas,
+			show_cursor=False
+		).execute()
 
 
-		# If's e else's 2 (drink pronto)
-		if escolha2 == "":
+		# If's e else 2 (drink pronto)
+		if escolha2 == 'N':
+			break
+
+		
+		if escolha2 == 'S':
+			escolha_bebida = inquirer.select(
+				qmark='',
+				amark='',
+				message='Escolha uma bebida ou pressione "sair" para avançar',
+				choices=bebidas_escolha,
+				show_cursor=False
+			).execute()
+
+
+		if escolha_bebida == 'sair':
 			break
 
 
-		if escolha2 in bebidas:
+		if escolha_bebida not in drink_pronto:
 
-			if escolha2 in drink_pronto:
-				print('''\n\n\n				  	
-		  			=====================	
-		  			Bebida já selecionada
-		  			=====================\n\n\n''')
-
-
-			else:
-				drink_pronto.append(escolha2)
-				print('''\n\n\n					
+			drink_pronto.append(escolha_bebida)
+			print('''\n\n\n					
 		  			=============================
 		  			Bebida adicionada com sucesso
 		  			=============================\n\n\n''')
 
+
 		else:
-			print('''\n\n\n				 	
-		 			=====================
-		 			Bebida não disponível
-		 			=====================\n\n\n''')
+
+			print('''\n\n\n				  	
+		  			=====================	
+		  			Bebida já selecionada
+		  			=====================\n\n\n''')
 
 
 	# Drink pronto
@@ -156,37 +190,48 @@ def main():
 
 
 		# Escolha do jogador 3 (sobremesa pronta)
-		escolha3 = input('''\n  - Escolha uma sobremesa sem repetições ou pressione "Enter" para sair: 
+		escolha3 = inquirer.select(
+			qmark='',
+			amark='',
+			message='- Deseja escolher sobremesa? Pressione "N" para encerrar',
+			choices=escolhas,
+			show_cursor=False
+		).execute()
 
-> ''').strip().lower()
 
-
-		# If's e else's 3 (sobremesa pronta)
-		if escolha3 == "":
+		# If's e else 3 (sobremesa pronta)
+		if escolha3 == 'N':
 			break
 
 
-		if escolha3 in sobremesas:
+		if escolha3 == 'S':
+			escolha_sobremesa = inquirer.select(
+				qmark='',
+				amark='',
+				message='Escolha uma sobremesa ou pressione "sair" para finalizar',
+				choices=sobremesas_escolha,
+				show_cursor=False
+			).execute()
 
-			if escolha3 in sobremesa_pronta:
-				print('''\n\n\n					
-		  			========================
-		  			Sobremesa já selecionada
-		  			========================\n\n\n''')
+		
+		if escolha_sobremesa == 'sair':
+			break
 
 
-			else:
-				sobremesa_pronta.append(escolha3)
-				print('''\n\n\n					
+		if escolha_sobremesa not in sobremesa_pronta:
+
+			sobremesa_pronta.append(escolha_sobremesa)
+			print('''\n\n\n					
 		  			======================
 		  			Adicionado com sucesso
 		  			======================\n\n\n''')
-
+			
 		else:
+
 			print('''\n\n\n					
-		 			========================
-		 			Sobremesa não disponível
-		 			========================\n\n\n''')
+		  			========================
+		  			Sobremesa já selecionada
+		  			========================\n\n\n''')
 
 
 	# Sobremesa pronta
