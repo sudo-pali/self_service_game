@@ -1,23 +1,21 @@
 # Importando a biblioteca
+import os
+from time import sleep
 from InquirerPy import inquirer
-
 
 # Função principal
 def main():
 
 
 	# Menu de comidas
-	menu = ['arroz', 'tutu', 'carne', 'batata frita', 'salada', 'farofa', 'salpicão', 'maionese']
 	menu_escolhas = ['arroz', 'tutu', 'carne', 'batata frita', 'salada', 'farofa', 'salpicão', 'maionese', 'sair']
 
 
 	# Menu de bebidas
-	bebidas = ['coca cola', 'suco', 'água', 'água c/ gás', 'pepsi', 'vinho', 'caipirinha']
 	bebidas_escolha = ['coca cola', 'suco', 'água', 'água c/ gás', 'pepsi', 'vinho', 'caipirinha', 'sair']
 
 
 	# Menu de sobremesas
-	sobremesas = ['quindim', 'bolo', 'torta', 'pudim', 'cupcake', 'pavê', 'gelatina']
 	sobremesas_escolha = ['quindim', 'bolo', 'torta', 'pudim', 'cupcake', 'pavê', 'gelatina', 'sair']
 
 
@@ -38,7 +36,7 @@ def main():
 	   
 	   			========================================
 				\n""")
-
+	
 
 	# Prato feito a ser montado
 	prato_feito = []
@@ -52,23 +50,23 @@ def main():
 	sobremesa_pronta = []
 
 
+	# Inicio
+	input('Pressione "Enter" para iniciar: ')
+
+
 	# Loop do prato feito
 	while True:
 
 
-		# Print de comidas disponíveis
-		print(f"""\n\n       
-					Comidas dispoíveis: 
-		
-			{menu}
-					\n\n""")
+		# Limpar tela
+		os.system('clear')
 
 
 		# Escolha do jogador (prato feito)
 		escolha = inquirer.select(
 			qmark='',
 			amark='',
-			message='- Deseja escolher alimento? Pressione "N" para escolher bebida',
+			message='- Deseja escolher alimento? Ou pressione "N" para escolher bebida\n',
 			choices=escolhas,
 			show_cursor=False
 		).execute()
@@ -83,7 +81,7 @@ def main():
 			escolha_alimento = inquirer.select(
 				qmark='',
 				amark='',
-				message='Escolha um alimento ou pressione "sair" para avançar',
+				message='Escolha um alimento ou pressione "sair" para avançar\n',
 				choices=menu_escolhas,
 				show_cursor=False
 			).execute()
@@ -100,38 +98,37 @@ def main():
 		  			===============================
 		  			Alimento adicionado com sucesso
 		  			===============================\n\n\n''')
-			
+			sleep(1.5)
+
 
 		else:
 			print('''\n\n\n 
 		  			=======================
 		  			Alimento já selecionado
 		  			=======================\n\n\n''')
+			sleep(1.5)
 
 
 	# Prato feito
 	print(f"""\n\n\n					Comida selecionada: 
 	   
 	   			{prato_feito}\n""")
+	sleep(1.5)
 
 
 	# Loop do drink pronto
 	while True:
 
 
-		# Print de bebidas disponíveis
-		print(f"""\n\n       
-					Bebidas dispoíveis:
-		 
-			{bebidas}
-					\n\n""")
+		# Limpar tela
+		os.system('clear')
 
 
 		# Escolha do jogador 2 (drink pronto)
 		escolha2 = inquirer.select(
 			qmark='',
 			amark='',
-			message='- Deseja escolher bebida? Pressione "N" para escolher sobremesa',
+			message='- Deseja escolher bebida? Ou pressione "N" para escolher sobremesa\n',
 			choices=escolhas,
 			show_cursor=False
 		).execute()
@@ -146,7 +143,7 @@ def main():
 			escolha_bebida = inquirer.select(
 				qmark='',
 				amark='',
-				message='Escolha uma bebida ou pressione "sair" para avançar',
+				message='Escolha uma bebida ou pressione "sair" para avançar\n',
 				choices=bebidas_escolha,
 				show_cursor=False
 			).execute()
@@ -163,6 +160,8 @@ def main():
 		  			=============================
 		  			Bebida adicionada com sucesso
 		  			=============================\n\n\n''')
+			sleep(1.5)
+
 
 
 		else:
@@ -171,29 +170,29 @@ def main():
 		  			=====================	
 		  			Bebida já selecionada
 		  			=====================\n\n\n''')
+			sleep(1.5)
 
 
 	# Drink pronto
 	print(f"""\n\n\n				    	Bebida selecionada: 
 	   
 	   			{drink_pronto}\n""")
+	sleep(1.5)
 
 
 	# Loop da sobremesa pronta
 	while True:
 
 
-		# Print de sobremesas disponíveis
-		print(f"""\n\n					Sobremesas dispoíveis:
-
-				{sobremesas}\n\n""")
+		# Limpar tela
+		os.system('clear')
 
 
 		# Escolha do jogador 3 (sobremesa pronta)
 		escolha3 = inquirer.select(
 			qmark='',
 			amark='',
-			message='- Deseja escolher sobremesa? Pressione "N" para encerrar',
+			message='- Deseja escolher sobremesa? Ou pressione "N" para encerrar\n',
 			choices=escolhas,
 			show_cursor=False
 		).execute()
@@ -208,7 +207,7 @@ def main():
 			escolha_sobremesa = inquirer.select(
 				qmark='',
 				amark='',
-				message='Escolha uma sobremesa ou pressione "sair" para finalizar',
+				message='Escolha uma sobremesa ou pressione "sair" para finalizar\n',
 				choices=sobremesas_escolha,
 				show_cursor=False
 			).execute()
@@ -225,19 +224,23 @@ def main():
 		  			======================
 		  			Adicionado com sucesso
 		  			======================\n\n\n''')
-			
+			sleep(1.5)
+
+
 		else:
 
 			print('''\n\n\n					
 		  			========================
 		  			Sobremesa já selecionada
 		  			========================\n\n\n''')
+			sleep(1.5)
 
 
 	# Sobremesa pronta
 	print(f'''\n\n\n					Sua sobremesa pronta:
 	   
 	   				{sobremesa_pronta}\n\n\n''')
+	sleep(1.5)
 
 
 	# Total de refeições
