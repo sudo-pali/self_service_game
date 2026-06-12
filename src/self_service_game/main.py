@@ -1,4 +1,4 @@
-# Importando a biblioteca
+# Importando as bibliotecas
 import os
 from time import sleep
 from InquirerPy import inquirer
@@ -62,6 +62,16 @@ def main():
 		os.system('clear')
 
 
+		# Mostrar prato
+		texto_prato = f" Prato atual: {prato_feito if prato_feito else 'Vazio'}"
+		tamanho_barra = len(texto_prato) + 2
+
+
+		print("=" * tamanho_barra)
+		print(texto_prato)
+		print("=" * tamanho_barra + "\n")
+
+
 		# Escolha do jogador (prato feito)
 		escolha = inquirer.select(
 			qmark='',
@@ -109,19 +119,22 @@ def main():
 			sleep(1.5)
 
 
-	# Prato feito
-	print(f"""\n\n\n					Comida selecionada: 
-	   
-	   			{prato_feito}\n""")
-	sleep(1.5)
-
-
 	# Loop do drink pronto
 	while True:
 
 
 		# Limpar tela
 		os.system('clear')
+
+
+		# Mostrar drink
+		texto_drink = f" Drink atual: {drink_pronto if drink_pronto else 'Vazio'}"
+		tamanho_barra = len(texto_drink) + 2
+
+
+		print("=" * tamanho_barra)
+		print(texto_drink)
+		print("=" * tamanho_barra + "\n")
 
 
 		# Escolha do jogador 2 (drink pronto)
@@ -173,19 +186,22 @@ def main():
 			sleep(1.5)
 
 
-	# Drink pronto
-	print(f"""\n\n\n				    	Bebida selecionada: 
-	   
-	   			{drink_pronto}\n""")
-	sleep(1.5)
-
-
 	# Loop da sobremesa pronta
 	while True:
 
 
 		# Limpar tela
 		os.system('clear')
+
+
+		# Mostrar prato
+		texto_sobremesa = f" Sobremesa atual: {sobremesa_pronta if sobremesa_pronta else 'Vazio'}"
+		tamanho_barra = len(texto_sobremesa) + 2
+
+
+		print("=" * tamanho_barra)
+		print(texto_sobremesa)
+		print("=" * tamanho_barra + "\n")
 
 
 		# Escolha do jogador 3 (sobremesa pronta)
@@ -234,13 +250,6 @@ def main():
 		  			Sobremesa já selecionada
 		  			========================\n\n\n''')
 			sleep(1.5)
-
-
-	# Sobremesa pronta
-	print(f'''\n\n\n					Sua sobremesa pronta:
-	   
-	   				{sobremesa_pronta}\n\n\n''')
-	sleep(1.5)
 
 
 	# Total de refeições
