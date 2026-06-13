@@ -4,6 +4,11 @@ from time import sleep
 from InquirerPy import inquirer
 
 
+# Função limpa tela
+def limpar_tela():
+	os.system('cls' if os.name == 'nt' else 'clear')
+
+
 # Função principal
 def main():
 
@@ -18,10 +23,6 @@ def main():
 
 	# Menu de sobremesas
 	sobremesas_escolha = ['quindim', 'bolo', 'torta', 'pudim', 'cupcake', 'pavê', 'gelatina', 'sair']
-
-
-	# Escolhas
-	escolhas = ['S', 'N']
 
 
 	# Apresentação do game
@@ -52,7 +53,7 @@ def main():
 
 
 	# Inicio
-	input('Pressione "Enter" para iniciar: ')
+	input('Pressione [Enter] para iniciar: ')
 
 
 	# Loop do prato feito
@@ -60,7 +61,7 @@ def main():
 
 
 		# Limpar tela
-		os.system('clear')
+		limpar_tela()
 
 
 		# Mostrar prato
@@ -77,34 +78,20 @@ def main():
 		escolha = inquirer.select(
 			qmark='',
 			amark='',
-			message='- Deseja escolher alimento? Ou pressione "N" para escolher bebida\n',
-			choices=escolhas,
+			message='- Escolha um alimento ou pressione [sair] para escolher bebida\n',
+			choices=menu_escolhas,
 			show_cursor=False
 		).execute()
 
 
 		# If's e else (prato feito)
-		if escolha == 'N':
+		if escolha == 'sair':
 			break
 
 
-		if escolha == 'S':
-			escolha_alimento = inquirer.select(
-				qmark='',
-				amark='',
-				message='Escolha um alimento ou pressione "sair" para avançar\n',
-				choices=menu_escolhas,
-				show_cursor=False
-			).execute()
-	
-
-		if escolha_alimento == 'sair':
-			break
-
-
-		if escolha_alimento not in prato_feito:
+		if escolha not in prato_feito:
 				
-			prato_feito.append(escolha_alimento)
+			prato_feito.append(escolha)
 			print('''\n\n\n 
 		  			===============================
 		  			Alimento adicionado com sucesso
@@ -125,7 +112,7 @@ def main():
 
 
 		# Limpar tela
-		os.system('clear')
+		limpar_tela()
 
 
 		# Mostrar drink
@@ -142,34 +129,20 @@ def main():
 		escolha2 = inquirer.select(
 			qmark='',
 			amark='',
-			message='- Deseja escolher bebida? Ou pressione "N" para escolher sobremesa\n',
-			choices=escolhas,
+			message='- Escolha uma bebida ou pressione [sair] para escolher sobremesa\n',
+			choices=bebidas_escolha,
 			show_cursor=False
 		).execute()
 
 
 		# If's e else 2 (drink pronto)
-		if escolha2 == 'N':
-			break
-
-		
-		if escolha2 == 'S':
-			escolha_bebida = inquirer.select(
-				qmark='',
-				amark='',
-				message='Escolha uma bebida ou pressione "sair" para avançar\n',
-				choices=bebidas_escolha,
-				show_cursor=False
-			).execute()
-
-
-		if escolha_bebida == 'sair':
+		if escolha2 == 'sair':
 			break
 
 
-		if escolha_bebida not in drink_pronto:
+		if escolha2 not in drink_pronto:
 
-			drink_pronto.append(escolha_bebida)
+			drink_pronto.append(escolha2)
 			print('''\n\n\n					
 		  			=============================
 		  			Bebida adicionada com sucesso
@@ -192,7 +165,7 @@ def main():
 
 
 		# Limpar tela
-		os.system('clear')
+		limpar_tela()
 
 
 		# Mostrar prato
@@ -209,34 +182,20 @@ def main():
 		escolha3 = inquirer.select(
 			qmark='',
 			amark='',
-			message='- Deseja escolher sobremesa? Ou pressione "N" para encerrar\n',
-			choices=escolhas,
+			message='- Escolha uma sobremesa ou pressione [sair] para finalizar\n',
+			choices=sobremesas_escolha,
 			show_cursor=False
 		).execute()
 
 
 		# If's e else 3 (sobremesa pronta)
-		if escolha3 == 'N':
+		if escolha3 == 'sair':
 			break
 
 
-		if escolha3 == 'S':
-			escolha_sobremesa = inquirer.select(
-				qmark='',
-				amark='',
-				message='Escolha uma sobremesa ou pressione "sair" para finalizar\n',
-				choices=sobremesas_escolha,
-				show_cursor=False
-			).execute()
+		if escolha3 not in sobremesa_pronta:
 
-		
-		if escolha_sobremesa == 'sair':
-			break
-
-
-		if escolha_sobremesa not in sobremesa_pronta:
-
-			sobremesa_pronta.append(escolha_sobremesa)
+			sobremesa_pronta.append(escolha3)
 			print('''\n\n\n					
 		  			======================
 		  			Adicionado com sucesso
@@ -263,10 +222,13 @@ def main():
 	   
                                         {prato_feito}
 					   
+										
                                         de refeição
 
+										
                                         acompanhado de 
 
+										
                                         {drink_pronto}
 
 						
@@ -274,6 +236,7 @@ def main():
 			
                                         {sobremesa_pronta}
 
+										
                                         de sobremesa.""")
 
 
