@@ -18,14 +18,22 @@ Um jogo interativo de terminal que simula um self-service:
 
 > **⚠️  Nota de dependência:** o jogo agora usa a biblioteca '"InquirerPy". Ao instalá-lo via "pip" ela virá junto.
 
-### Como instalar e usar:
+## 📥 Instalação:
+
+- Recomendo instalar com "pipx" para não "sujar" as dependências globais
 
 ```
-# Instalação
+pipx install self-service-game
+```
+
+- Mas se quiser mesmo assim com as dependências:
+
+```
 pip install self-service-game
 ```
 
+## 🕹️  Uso:
+
 ```
-# Uso
 self-service
 ```
