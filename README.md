@@ -1,5 +1,5 @@
 # Self Service
-(v 1.0.1)
+(v 1.0.2)
 
 Um jogo interativo de terminal que simula um self-service:
 
