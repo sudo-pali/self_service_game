@@ -1,63 +1,22 @@
 # Self Service
-(v 0.2.7)
+(v 1.0.1)
 
-Sirva-se com as comidas disponíveis:
+Um jogo interativo de terminal que simula um self-service:
 
-*sendo elas:*
+## 📋 Opções Disponíveis no Buffet
 
-- arroz
+### 🍛 Comidas:
+- Arroz, Tutu, Carne, Batata Frita, Salada, Farofa, Salpicão e Maionese.
 
-- tutu 
+### 🍹 Bebidas:
+- Coca Cola, Suco, Água, Água c/ Gás, Pepsi, Vinho e Caipirinha.
 
-- carne
+### 🍮 Sobremesas:
+- Quindim, Bolo, Torta, Pudim, Cupcake, Pavê e Gelatina.
 
-- batata frita
+* **🚫 Sem opção de repetição**
 
-- salada
-
-- farofa
-
-- salpicão
-
-- maionese
-
-Logo após sirva-se com as bebidas:
-
-*sendo elas:*
-
-- coca cola
-
-- suco
-
-- água
-
-- água c/ gás
-
-- pepsi
-
-- vinho
-
-- caipirinha
-
-E, por fim sirva-se com as sobremesas:
-
-*sendo elas:*
-
-- quindim
-
-- bolo
-
-- torta
-
-- pudim
-
-- cupcake
-
-- pavê
-
-- gelatina
-
-# Sem opção de repetição
+> **⚠️  Nota de dependência:** o jogo agora usa a biblioteca '"InquirerPy". Ao instalá-lo via "pip" ela virá junto.
 
 ### Como instalar e usar:
 
